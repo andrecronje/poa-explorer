@@ -25,7 +25,8 @@ defmodule Explorer.Application do
       [
         supervisor(Exq, [exq_options]),
         worker(Explorer.Chain.Statistics.Server, []),
-        Explorer.ExchangeRates
+        Explorer.ExchangeRates,
+        Explorer.Market.MarketHistory.Cataloger
       ]
   end
 
